@@ -24,4 +24,5 @@ urlpatterns = [
     path('crearcursos/', views.crearcursos, name = "crearcursos"),
     path('crearproductos/', views.crearproductos, name = "crearproductos"),
     path('crearproducto1/', views.crearproducto1, name = "crearproducto1"),
+    path('crearcurso1/', views.crearcurso1, name = "crearcurso1"),
 ]
