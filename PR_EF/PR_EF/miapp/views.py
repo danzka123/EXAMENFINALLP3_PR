@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from miapp.models import Producto
 
 # Create your views here.
 def index(request):
@@ -19,3 +20,15 @@ def crearcursos(request):
 def crearproductos(request):
     return render(request, 'crearproductos.html', {
     })
+def crearproducto1(request):
+    producto=Producto(
+        codigo= "DL213",
+        nombre= "Queso",
+        precio_compra = "5 Soles",
+        precio_venta = "7 Soles",
+        fecha_compra = "2022-07-25",
+        fecha_registro = "2022-08-02",
+        estado = "A"   
+    )
+    producto.save()
+    return HttpResponse(f"Producto creado: {producto.codigo} - {producto.nombre} - {producto.precio_compra} - {producto.precio_venta} - {producto.fecha_compra} - {producto.fecha_registro} - {producto.estado}")
